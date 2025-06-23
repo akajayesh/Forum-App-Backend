@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-n2da66fnep2pns!!x8u-r=d8-d(p!r5fh!=q#r*$v)f8c)+pvo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -135,3 +135,8 @@ DATABASES = {
 }
 
 AUTH_USER_MODEL = 'myapp.CustomUser'
+
+import os
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

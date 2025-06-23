@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: discussion-forum
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn discussion_forum.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: discussion_forum.settings
