@@ -1,0 +1,16 @@
+<h2>Forum Categories</h2>
+
+<form method="get" action="{% url 'search' %}" style="margin-bottom: 20px;">
+  <input type="text" name="q" placeholder="Search threads or posts" style="padding: 6px; width: 70%;">
+  <button type="submit" style="padding: 6px 10px;">Search</button>
+</form>
+
+<ul style="list-style-type: none; padding-left: 0;">
+  {% for category in categories %}
+    <li style="margin-bottom: 10px;">
+      <a href="{% url 'thread_list' category.id %}"><b>{{ category.name }}</b></a>
+    </li>
+  {% empty %}
+    <li>No categories available.</li>
+  {% endfor %}
+</ul>

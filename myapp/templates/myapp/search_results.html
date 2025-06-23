@@ -1,0 +1,12 @@
+<h2>Search Results for "<i>{{ query }}</i>"</h2>
+<hr>
+
+<ul>
+  {% for thread in threads %}
+    <li>
+      <a href="{% url 'thread_detail' thread.id %}">{{ thread.title }}</a>
+    </li>
+  {% empty %}
+    <li>No threads matched your search.</li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,48 @@
+<h2>{{ thread.title }}</h2>
+<p>Started by <b>{{ thread.author }}</b></p>
+
+{% if messages %}
+  {% for message in messages %}
+    <p style="color: red;">{{ message }}</p>
+  {% endfor %}
+{% endif %}
+
+{% if thread.is_locked %}
+  <p style="color:red;"><b>⚠️ This thread is locked. No replies allowed.</b></p>
+{% endif %}
+
+<hr>
+
+{% for post in posts %}
+  <div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+    <p><b>{{ post.author }}</b>: {{ post.content }}</p>
+    <p>
+      👍 {{ post.upvotes }}
+      <a href="{% url 'upvote_post' post.id %}">Upvote</a> |
+      👎 {{ post.downvotes }}
+      <a href="{% url 'downvote_post' post.id %}">Downvote</a> |
+      {% if not thread.is_locked %}
+        <a href="{% url 'reply_post' post.id %}">Reply</a> |
+      {% endif %}
+      <a href="{% url 'report_post' post.id %}">Report</a>
+    </p>
+
+    {% for reply in post.replies.all %}
+      <div style="margin-left: 2em; border-left: 2px dashed #aaa; padding-left: 10px;">
+        <p><b>{{ reply.author }}</b>: {{ reply.content }}</p>
+        <p>
+          👍 {{ reply.upvotes }}
+          <a href="{% url 'upvote_post' reply.id %}">Upvote</a> |
+          👎 {{ reply.downvotes }}
+          <a href="{% url 'downvote_post' reply.id %}">Downvote</a> |
+          {% if not thread.is_locked %}
+            <a href="{% url 'reply_post' reply.id %}">Reply</a> |
+          {% endif %}
+          <a href="{% url 'report_post' reply.id %}">Report</a>
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+{% empty %}
+  <p>No posts in this thread yet.</p>
+{% endfor %}
