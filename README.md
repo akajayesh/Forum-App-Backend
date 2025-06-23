@@ -30,6 +30,7 @@ Supports threaded conversations, user authentication, post voting, moderation to
 1. Clone the repo
 
 git clone https://github.com/YOUR_USERNAME/Forum-App-Backend.git
+
 cd Forum-App-Backend
 
 2. Create and activate a virtual environment
