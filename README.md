@@ -39,13 +39,13 @@ python -m venv venv
 venv\Scripts\activate   # Windows
 # source venv/bin/activate   # Mac/Linux
 
-3. Install Dependencies 
+3. Install Dependencies by
 pip install -r requirements.txt
 
-4. Apply Migrations
+4. Apply Migrations bu
 python manage.py migrate
 
-5. Run Deployment server 
+5. Run Deployment server by
 python manage.py runserver
 
 And after all this , Visit http://127.0.0.1:8000/ to explore the app locally
