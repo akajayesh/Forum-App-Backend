@@ -42,7 +42,7 @@ venv\Scripts\activate   # Windows
 3. Install Dependencies by
 pip install -r requirements.txt
 
-4. Apply Migrations bu
+4. Apply Migrations by
 python manage.py migrate
 
 5. Run Deployment server by
