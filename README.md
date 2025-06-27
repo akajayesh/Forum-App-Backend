@@ -49,3 +49,9 @@ python manage.py migrate
 python manage.py runserver
 
 And after all this , Visit http://127.0.0.1:8000/ to explore the app locally
+
+
+For Video Explanation , checkout -
+https://drive.google.com/file/d/1lM8pSsOFrYwJCf15Jqh1JsqOxtRvu3jM/view?usp=sharing
+
+https://drive.google.com/file/d/1yWER3fxkhbkjSP_9LkSpi1mNknTM8vaM/view?usp=sharing
